@@ -22,15 +22,12 @@ const GET = `
 const POST = `
   insert into
     categories(category_name)
-  values
-    ($1)
+  values ($1)
   returning *;
 `;
 
 const PUT = `
-  update
-    categories
-  set
+  update categories set
     category_name = $2
   where
     status = 'active'
@@ -39,9 +36,7 @@ const PUT = `
 `;
 
 const DELETE = `
-  update
-    categories
-  set
+  update categories set
     status = 'deleted'
   where
     category_id = $1 
@@ -49,9 +44,7 @@ const DELETE = `
 `;
 
 const CHECK = `
-  select
-    *
-  from 
+  select * from 
     categories
   where 
     category_name = $1
@@ -59,9 +52,7 @@ const CHECK = `
 `;
 
 const POSTDELETED = `
-  update
-    categories
-  set
+  update categories set
     status = 'active'
   where
     category_id = $1 

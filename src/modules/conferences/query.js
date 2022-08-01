@@ -142,8 +142,7 @@ const POSTCONFERENCEPOSTBODY = `
 `;
 
 const PUTSTATUS = `
-  update conferences set
-    status = $2
+  update conferences set status = $2
   where
     conference_id = $1 and
     status = 'waiting'

@@ -3,24 +3,26 @@ insert into
   admins(admin_name, password)
 values
   (
-    'Jack',
-    crypt('12345678', gen_salt('bf'))
+    'ulugbek',
+    crypt('87654321', gen_salt('bf'))
   );
   
 -- users
+
 insert into
   users(username, password)
 values
+  -- (
+  --   'andrey',
+  --   crypt('9t4b11yi5a', gen_salt('bf'))
+  -- ),
   (
-    'andrey',
-    crypt('9t4b11yi5a', gen_salt('bf'))
-  ),
-  (
-    'joshqin',
-    crypt('xn-9t4b11yi5a', gen_salt('bf'))
+    'salim',
+    crypt('x-9t4bgtsae5a', gen_salt('bf'))
   );
 
 -- categories
+
 insert into
   categories(category_name)
 values
@@ -30,6 +32,7 @@ values
   ('Ta''lim');
 
 -- sub_categories
+
 insert into
   sub_categories(sub_category_name, category_id)
 values
@@ -43,6 +46,7 @@ values
   ('Fizika', 4);
 
 -- organizers
+
 insert into
   organizers(
     organizer_name,
@@ -75,6 +79,7 @@ values
   );
 
 -- conferences
+
 insert into
   conferences(
     conference_date,
@@ -107,6 +112,7 @@ values
   );
 
 -- conference_links
+
 insert into
   conference_links(conference_link, conference_id)
 values
@@ -138,6 +144,7 @@ values
   );
 
 -- post_bodys
+
 insert into
   post_bodys(post_body_text, post_id)
 values
@@ -188,6 +195,7 @@ values
   );
 
 -- post_images
+
 insert into
   post_images(post_image_link, post_id)
 values

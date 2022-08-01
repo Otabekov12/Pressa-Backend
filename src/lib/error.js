@@ -1,3 +1,4 @@
+
 export class AuthorizationError extends Error {
   constructor(status, message) {
     super();
@@ -6,6 +7,7 @@ export class AuthorizationError extends Error {
     this.message = message;
   }
 }
+
 
 export class InternalServerError extends Error {
   constructor(status, message) {
@@ -16,6 +18,7 @@ export class InternalServerError extends Error {
   }
 }
 
+
 export class ValidationError extends Error {
   constructor(status, message) {
     super();
@@ -25,6 +28,7 @@ export class ValidationError extends Error {
   }
 }
 
+
 export class ForbiddenError extends Error {
   constructor(status, message) {
     super();
@@ -33,6 +37,7 @@ export class ForbiddenError extends Error {
     this.message = message;
   }
 }
+
 
 export class NotFoundError extends Error {
   constructor(status, message) {

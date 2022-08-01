@@ -1,4 +1,5 @@
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./query.js";
 
 const GET = async () => {
@@ -8,6 +9,7 @@ const GET = async () => {
     return organizers;
   } catch (error) {
     console.log(error);
+
   }
 };
 

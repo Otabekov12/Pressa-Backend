@@ -13,6 +13,7 @@ const GET = async (req, res, next) => {
       message: "ok",
       data: organizers,
     });
+    
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }

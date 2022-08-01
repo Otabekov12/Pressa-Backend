@@ -1,8 +1,11 @@
 import fs from "fs";
+
 import path from "path";
+
 import http from "http";
 
 import express from "express";
+
 import cors from "cors";
 
 import socket from "./socket/index.js";
@@ -10,11 +13,11 @@ import socket from "./socket/index.js";
 import modules from "./modules/modules.js";
 
 const app = express();
+
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), "src", "uploads")));
 
 app.use(cors());
-
 app.use(modules);
 
 app.use((error, req, res, next) => {
@@ -23,6 +26,7 @@ app.use((error, req, res, next) => {
       status: error.status,
       message: error.message,
     });
+
   }
 
   fs.appendFileSync(
@@ -36,6 +40,7 @@ app.use((error, req, res, next) => {
   });
 
   process.exit();
+
 });
 
 const server = http.createServer(app);

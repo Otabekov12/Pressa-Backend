@@ -1,4 +1,5 @@
 import model from "./model.js";
+
 import { InternalServerError, NotFoundError } from "../../lib/error.js";
 
 const GET = async (req, res, next) => {
@@ -12,10 +13,12 @@ const GET = async (req, res, next) => {
       message: "ok",
       data: conferences,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
 };
+
 
 const POST = async (req, res, next) => {
   try {
@@ -27,10 +30,12 @@ const POST = async (req, res, next) => {
       message: "ok",
       data: conference,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
 };
+
 
 const PUTSTATUS = async (req, res, next) => {
   try {
@@ -42,6 +47,7 @@ const PUTSTATUS = async (req, res, next) => {
       message: "status edited",
       data: conference,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }

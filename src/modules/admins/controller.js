@@ -1,4 +1,5 @@
 import jwt from "../../lib/jwt.js";
+
 import model from "./model.js";
 
 import { InternalServerError, AuthorizationError, NotFoundError } from "../../lib/error.js";
@@ -14,6 +15,7 @@ const GET = async (req, res, next) => {
       adminId: req.adminId,
       data: admins,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
@@ -30,6 +32,7 @@ const POST = async (req, res, next) => {
       token: jwt.sign({ adminId: admin.admin_id }),
       data: admin,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
@@ -46,6 +49,7 @@ const LOGIN = async (req, res, next) => {
       token: jwt.sign({ adminId: admin.admin_id }),
       data: admin,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }

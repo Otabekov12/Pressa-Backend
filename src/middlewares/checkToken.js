@@ -1,7 +1,10 @@
+
 import { ForbiddenError } from "../lib/error.js";
+
 import jwt from "../lib/jwt.js";
 
 export default (req, res, next) => {
+
   try {
     if (req.url == "/login" || req.url == "/register") return next();
 
@@ -22,6 +25,7 @@ export default (req, res, next) => {
     req.userId = userId;
 
     return next();
+    
   } catch (error) {
     return next(new ForbiddenError(403, error.message));
   }

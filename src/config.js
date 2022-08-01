@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const SECRET = process.env.JWT_SECRET;
+
 const HOST = process.env.HOST;
 
 const pgConfig = {

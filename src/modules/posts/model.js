@@ -1,4 +1,5 @@
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./query.js";
 
 const GET = async ({ postId = 0 }, { search = "" }) => {
@@ -10,6 +11,7 @@ const GET = async ({ postId = 0 }, { search = "" }) => {
     console.log(error);
   }
 };
+
 
 const POSTIMAGE = async ({ postId }, { mainImage: [main], image }) => {
   try {

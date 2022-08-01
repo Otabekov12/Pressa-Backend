@@ -1,7 +1,9 @@
 import { Router } from "express";
 
 import controller from "./controller.js";
+
 import validation from "../../middlewares/validation.js";
+
 import checkToken from "../../middlewares/checkToken.js";
 
 const router = Router();

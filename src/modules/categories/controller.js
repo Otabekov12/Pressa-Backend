@@ -13,6 +13,7 @@ const GET = async (req, res, next) => {
       message: "ok",
       data: categories,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
@@ -29,6 +30,7 @@ console.log(category);
       message: "ok",
       data: category,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
@@ -45,6 +47,7 @@ const PUT = async (req, res, next) => {
       message: "ok",
       data: category,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
@@ -61,6 +64,7 @@ const DELETE = async (req, res, next) => {
       message: "ok",
       data: category,
     });
+    
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }

@@ -1,4 +1,5 @@
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./query.js";
 
 const GET = async ({ adminId = 0 }) => {

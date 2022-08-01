@@ -1,5 +1,7 @@
 import { HOST } from "../../config.js";
+
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./query.js";
 
 const GET = async ({ page = 1, limit = 9, status = "active" }, { conferenceId = 0 }) => {
@@ -22,8 +24,10 @@ const GET = async ({ page = 1, limit = 9, status = "active" }, { conferenceId = 
     return conferences;
   } catch (error) {
     console.log(error);
+
   }
 };
+
 
 const POST = async (
   {
@@ -58,7 +62,7 @@ const POST = async (
       userId
     );
 
-    // console.log(conferenceOrganizer);
+
 
     const { organizer_id, organizer_name, organizer_profession, organizer_type } =
       conferenceOrganizer;
@@ -108,6 +112,7 @@ const POST = async (
     return conference;
   } catch (error) {
     console.log(error);
+    
   }
 };
 
@@ -118,6 +123,7 @@ const PUTSTATUS = async ({ conferenceId }, { status }) => {
     return conference;
   } catch (error) {
     console.log(error);
+
   }
 };
 

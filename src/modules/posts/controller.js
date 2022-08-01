@@ -1,11 +1,14 @@
 import model from "./model.js";
+
 import upload from "../../lib/multer.js";
+
 import { InternalServerError, NotFoundError } from "../../lib/error.js";
 
 const imagesUpload = upload.fields([
   { name: "mainImage", maxCount: 1 },
   { name: "image", maxCount: 1 },
 ]);
+
 
 const GET = async (req, res, next) => {
   try {
@@ -17,10 +20,12 @@ const GET = async (req, res, next) => {
       message: "ok",
       data: posts,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
 };
+
 
 const POSTIMAGE = async (req, res, next) => {
   try {
@@ -32,6 +37,7 @@ const POSTIMAGE = async (req, res, next) => {
       message: "images added",
       data: images,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }

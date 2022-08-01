@@ -1,4 +1,6 @@
+
 import { loginScheme, registerScheme } from "../lib/validations.js";
+
 import { ValidationError } from "../lib/error.js";
 
 export default (req, res, next) => {
@@ -14,6 +16,7 @@ export default (req, res, next) => {
     }
 
     return next();
+
   } catch (error) {
     return next(new ValidationError(401, error.message));
   }

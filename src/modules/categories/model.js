@@ -1,4 +1,5 @@
 import { fetch, fetchAll } from "../../lib/postgres.js";
+
 import query from "./query.js";
 
 const GET = async () => {
@@ -36,8 +37,10 @@ const POST = async ({ categoryName }) => {
     return categories;
   } catch (error) {
     console.log(error);
+
   }
 };
+
 
 const PUT = async ({ categoryId, categoryName }) => {
   try {
@@ -46,8 +49,10 @@ const PUT = async ({ categoryId, categoryName }) => {
     return categories;
   } catch (error) {
     console.log(error);
+
   }
 };
+
 
 const DELETE = async ({ categoryId }) => {
   try {
@@ -56,6 +61,7 @@ const DELETE = async ({ categoryId }) => {
     return categories;
   } catch (error) {
     console.log(error);
+
   }
 };
 

@@ -18,7 +18,8 @@ from
           o.organizer_profession
         from
           organizers o
-      ) as o on c .organizer_id = o.organizer_id
+      ) as o 
+      on c .organizer_id = o.organizer_id
       inner join (
         select
           p.post_id,
@@ -27,11 +28,14 @@ from
           i.post_image_link
         from
           posts p
-          inner join post_images as i on p.post_id = i.post_id
-      ) as p on p.conference_id = c .conference_id
+          inner join post_images as
+           i on p.post_id = i.post_id
+      ) as
+       p on p.conference_id = c .conference_id
     where
       c .status = 'active'
   ) res;
+
 select
   c .category_id,
   c .category_name,
@@ -45,7 +49,8 @@ from
       s.category_id
     from
       sub_categories as s
-  ) as s on s.category_id = c .category_id
+  ) as s 
+  on s.category_id = c .category_id
 where
   c .status = 'active'
 group by

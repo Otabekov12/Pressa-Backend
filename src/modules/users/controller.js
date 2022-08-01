@@ -1,4 +1,5 @@
 import jwt from "../../lib/jwt.js";
+
 import model from "./model.js";
 
 import { InternalServerError, AuthorizationError } from "../../lib/error.js";
@@ -14,10 +15,12 @@ const LOGIN = async (req, res, next) => {
       token: jwt.sign({ userId: user.user_id }),
       data: user,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
 };
+
 
 const REGISTER = async (req, res, next) => {
   try {
@@ -30,6 +33,7 @@ const REGISTER = async (req, res, next) => {
       token: jwt.sign({ userId: user.user_id }),
       data: user,
     });
+
   } catch (error) {
     return next(new InternalServerError(500, error.message));
   }
